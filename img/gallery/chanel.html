@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko"> <!-- 저장, HDD D:/CSS/190000.html -->
+<head>
+<meta charset="utf-8">
+<title>
+CSS 박스모델링 화면설계 구현 - 프로토타입 스케치/와이어프레임 제작_윤준호
+</title>
+<script src="js/prefixfree.min.js"></script>
+<!-- 자바스크립트 모듈소스, CSS3 추가 속성 적용 접두사(prefix) -->
+<style>
+* {margin:0; padding:0;}
+body {font:12px/1.5 "맑은 고딕","Malgun Gothic";}
+li {list-style-type:none;}
+
+div {box-sizing:border-box; border:0px solid red;}
+
+#wrapper {width:960px;
+margin:0 auto; }
+
+#header {width:960px; height:110px; 
+margin:0 auto;
+background: url("images/logo1122.png") no-repeat;
+background-size: cover;
+}
+
+#menu_utility{width:960px; height:20px; 
+ margin:0 auto;
+}
+
+#menu_gnb{ width:960px;
+text-align: center;
+margin-top: 69px;
+}
+
+#container{width:960px;
+}
+
+#cover{width:960px;
+float:left;
+}
+
+#content_sub{ width:310px;
+ float:right; }
+
+.content_sub_box1 { width: 310px; height: 182px; background: url("images/sub_01.png");
+border: 2px solid white; }
+.content_sub_box1 a { width: 306px; height: 178px; display: block; }
+.content_sub_box1 a { width: 306px; height: 178px; display: block; }
+.content_sub_box1 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s; }
+.content_sub_box1 a:active {color:#f00;}
+
+.content_sub_box2 { width: 310px; height: 182px; background: url("images/sub_02.png");
+border: 2px solid white; }
+.content_sub_box2 a { width: 306px; height: 178px; display: block; }
+.content_sub_box2 a { width: 306px; height: 178px; display: block; }
+.content_sub_box2 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_sub_box2 a:active {color:#f00;}
+
+.content_sub_box3 { width: 310px; height: 182px; background: url("images/sub_03.png");
+border: 2px solid white; }
+.content_sub_box3 a { width: 306px; height: 178px; display: block; }
+.content_sub_box3 a { width: 306px; height: 178px; display: block; }
+.content_sub_box3 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_sub_box3 a:active {color:#f00;}
+
+.content_sub_box4 { width: 310px; height:180px; border: 2px solid white; background: #fff; padding: 15px; }
+
+
+#content{width:650px;
+float:left;
+}
+
+.content_box_center_01 {width:650px; }
+
+.content_box_center_02 {width:650px; }
+
+.content_box1 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_820/spring-summer-2019-1-8814095695902.jpg") no-repeat;
+background-size:cover;
+float:left;
+}	
+.content_box1 a { width: 126px; height: 156px; display: block; }
+.content_box1 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box1 a:active {color:#f00;}
+
+.content_box2 {border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-2-8814096842782.jpg") no-repeat;
+background-size:cover;
+float:left;}
+.content_box2 a { width: 126px; height: 156px; display: block; }
+.content_box2 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box2 a:active {color:#f00;}
+
+.content_box3 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-3-8814095073310.jpg") no-repeat;
+background-size:cover;
+float:left;}
+.content_box3 a { width: 126px; height: 156px; display: block; }
+.content_box3 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box3 a:active {color:#f00;}
+
+.content_box4 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-5-8814094549022.jpg") no-repeat;
+background-size:cover;
+float:left;}
+.content_box4 a { width: 126px; height: 156px; display: block; }
+.content_box4 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box4 a:active {color:#f00;}
+
+.content_box5 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-6-8814094581790.jpg") no-repeat;
+background-size:cover;
+float:left;}
+.content_box5 a { width: 126px; height: 156px; display: block; }
+.content_box5 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box5 a:active {color:#f00;}
+
+.content_box6 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-54-8814096678942.jpg") no-repeat;
+background-size:cover;
+float:left;}
+.content_box6 a { width: 126px; height: 156px; display: block; }
+.content_box6 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box6 a:active {color:#f00;}
+
+.content_box7 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-55-8814095007774.jpg") no-repeat;
+background-size:cover;
+float:left;}
+.content_box7 a { width: 126px; height: 156px; display: block; }
+.content_box7 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box7 a:active {color:#f00;}
+
+.content_box8 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-56-8814094712862.jpg") no-repeat;
+background-size:cover;
+float:left;}
+.content_box8 a { width: 126px; height: 156px; display: block; }
+.content_box8 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box8 a:active {color:#f00;}
+
+.content_box9 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-53-8814095532062.jpg") no-repeat;
+background-size:cover; 
+float: left; }
+.content_box9 a { width: 126px; height: 156px; display: block; }
+.content_box9 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s; }
+.content_box9 a:active {color:#f00; }
+
+.content_box12 { border: 2px solid white;
+width:130px; height:160px;
+background: url("https://www.chanel.com/images/f_auto,q_auto,c_scale,w_4096/c_crop,h_3015,w_2040,x_1028,y_148/q_auto,f_auto,fl_lossy,dpr_auto/w_582/spring-summer-2019-68-8814096285726.jpg") no-repeat;
+background-size:cover; 
+float: right; }
+.content_box12 a { width: 126px; height: 156px; display: block; }
+.content_box12 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box12 a:active {color:#f00;}
+
+.content_box10 {width: 650px; height:145px;
+background: url("images/call.png") no-repeat;
+background-size: cover;
+border: 2px solid white; 
+float: left; }
+.content_box10 a { width: 646px; height: 141px; display: block; }
+.content_box10 a:hover {color: white; background: #888; opacity: 0.4; transition:1.5s;}
+.content_box10 a:active {color:#f00;}
+
+
+
+#content::after{content:""; display:block; clear:both;}	
+
+#cover::after{content:""; display:block; clear:both;}
+
+
+#container::after{content:""; display:block; clear:both;}
+
+.gnb li{ display:inline-block; }
+.gnb li a{display:inline-block; color:#000;
+text-decoration: none; padding: 2px; text-align: center; margin-left: 15px; } 
+.gnb {width:400px; margin:0 auto;}
+
+.gnb li a:hover {color: gray; transition:1.7s;}
+.gnb li a:active {color:#f00;}
+
+.connect { width: 960px; background: green; height: 100px; clear: both; }
+
+.call ul a { display:inline-block; text-decoration: none;  margin: 5px;  padding: 5px; }
+.call { float: left; width: 300px; height: 100px; background: white; text-align: center; padding: 5px; }
+.call li { display:inline-block;  text-align: center; }
+.call p { font: 15px "굴림", Gulim; padding: 3px; }
+.address { width: 660px; height: 100px; float: left; background: white; }
+.address p { text-align: center; font: 15px "굴림", Gulim; padding: 3px; }
+#footer { width:960px; height:50px;
+clear: both; }
+
+input.img-button {
+        background: url( "images/button.png" ) no-repeat;
+        width: 20px; heigh: 20px;
+        border: none;
+      }
+
+
+address { font-style: nomal; color: #000; padding: 10px 20px; text-align: center; }
+
+#footer { background: #fff; }
+
+#content span { text-align: justify;
+                position: absolute;
+                bottom: 5px; left: 0;
+                padding: 3px 0 3px 5px;
+                width:121px;
+                font:bold 12px "견고딕", "Malgun Gothic"; color:#000 ;
+                background: #ccc; opacity: 0.6; transition:1.5s;
+                border-radius:15px;
+                 }
+.content_box1 { position: relative; }
+.content_box2 { position: relative; }
+.content_box3 { position: relative; }
+.content_box4 { position: relative; }
+.content_box5 { position: relative; }
+.content_box6 { position: relative; }
+.content_box7 { position: relative; }
+.content_box8 { position: relative; }
+.content_box9 { position: relative; }
+.content_box12 { position: relative; }
+
+
+/* menu_gnb Module Source */
+
+a{
+	color:#000;
+	text-decoration:none;
+    z-index: 999;
+	}
+p a:hover{	text-decoration: none!important;
+    z-index: 999;
+}
+
+ul#menu_gnb {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+    z-index: 999;
+}
+
+ul#menu_gnb li a {
+	display: block;
+	font-weight: bold;
+	padding: 2px 10px;
+	background:#f9f9f9;
+    z-index: 999;
+}
+
+ul#menu_gnb li a:hover{
+	background:#888;
+	color:#fff;
+    z-index: 999;
+	}
+
+ul#menu_gnb li {
+	float: left;
+	position: relative;
+	width: 100px;
+	text-align: center;
+	margin-right:5px;
+	border:1px solid #ccc;
+    z-index: 999;
+    margin-top: 3px;
+
+}
+
+ul#menu_gnb li.current a{
+	background:#ddd;
+    z-index: 999;
+	}
+
+ul#menu_gnb li.current a:hover{
+	background:#888;
+    z-index: 999;
+	}
+
+li ul {
+	display: none;
+	position: absolute;
+	width:120px;
+	top: 0;
+	left: 0;
+	font-weight: normal;
+	padding: 1px 10px 10px 0;
+	margin-left:-1px;
+    z-index: 999;
+    background: #fff;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+
+ul#menu_gnb li ul.sub li{
+	border-width:0 1px 1px 1px!important;
+    z-index: 999;
+}
+
+ul#menu_gnb li ul.sub li a{
+	font-weight: normal!important;	
+    z-index: 999;
+}
+li>ul {
+	top: auto;
+	left: auto;
+    z-index: 999;
+}
+
+li:hover ul, li.over ul {
+	display: block;
+    z-index: 999;
+}
+
+/* menu_gnb Module Source  end */
+
+video { border: 2px solid white; margin-top: 0; padding-top: 0; }
+
+      #video_text {
+        position: absolute;
+        color: #fff;
+        z-index:999;
+        text-align: center;
+        bottom: 80px;
+        left: 240px;
+
+      }
+			#content_box11 {
+				position:relative;
+
+			}
+      h2 {
+        font-size:2em; color: #fff;
+      }
+			h1{
+				font-size:3.5em; color: #fff;
+			}
+
+.sub_4_1 ul { float: left; }
+.sub_4_1 li { margin-top: 3px; }
+.sub_4_2 ul { float: right; }
+.sub_4_2 li { margin-top: 5px; }
+
+/* .gnb_box { width:200px; height:300px; background: url("https://www.chanel.com/images/q_auto,f_auto,fl_lossy,dpr_auto/w_226/FSH-1551174959463-19smegamenucollectionhv4one.jpg");} */
+
+</style>
+</head>
+<body>
+	
+<div id="wrapper">
+<div id="header">
+<div id="menu_utility">
+</div> <!-- id=menu_utility end -->
+
+<div id="menu_gnb">
+<ul class="gnb">
+
+<li><a href="#">오뜨 꾸뛰르</a></li>
+
+<li><a href="#">컬렉션</a>
+      <ul class="sub">
+      <div class="gnb_box">
+          </div><!-- class=gnb_box end -->
+         <li>최신 패션쇼</li>
+         <li><a href="#">2019년 봄-여름</a></li><br>
+          <li><a href="#">2019 봄-여름<br>프리-컬렉션</a></li><br>
+         <li><a href="#">크루즈 2018/19 쇼</a></li><br>
+      </ul>
+   	</li>
+
+<li><a href="#">카테고리</a>
+      <ul class="sub">
+         <li><a href="#" title="Services > Webdesign">레디 투 웨어</a></li>
+         <li><a href="#" title="Services > Webpublisher">핸드백</a></li>
+         <li><a href="#" title="Services > Developement">액세서리</a></li>
+         <li><a href="#" title="Services > Illustration">아이웨어</a></li>
+      </ul>
+   	</li>
+
+<li><strong><a href="#">CHANEL NEWS</a></strong></li>
+</ul>
+
+</div> <!-- id=menu_gnb end -->
+
+</div> <!-- id=header end -->
+
+<div id="container">
+<div id="cover">
+<div id="content_sub">
+<div class="content_sub_box1"><a href="#" target= "_blank"></a>
+</div> <!-- id=content_sub_box1 -->
+<div class="content_sub_box2"><a href="#" target= "_blank"></a>
+</div> <!-- id=content_sub_box2 -->
+<div class="content_sub_box3"><a href="#" target= "_blank"></a>
+</div> <!-- id=content_sub_box3 -->
+<div class="content_sub_box4">
+<div class="sub_4_1">
+<ul><strong><a href="#" target= "_blank">CHANEL.COM</a></strong> 더보기
+<li><a href="#" target= "_blank">패션</a></li>
+<li><a href="#" target= "_blank">시계</a></li>
+<li><a href="#" target= "_blank">화인 주얼리</a></li>
+<li><a href="#" target= "_blank">향수</a></li>
+<li><a href="#" target= "_blank">메이크업</a></li>
+<li><a href="#" target= "_blank">스킨 케어</a></li>
+</ul>
+</div>
+<div class="sub_4_2">
+<ul><strong>케어 & 서비스</strong>
+<li><a href="#" target= "_blank">매장 찾기</a></li>
+<li><a href="#" target= "_blank">고객 문의</a></li>
+<li><a href="#" target= "_blank">FAQ</a></li>
+<li><a href="#" target= "_blank">케어 & 서비스</a></li>
+</ul>
+</div>
+</div> <!-- id=content_sub_box4 -->
+</div> <!-- id=content_sub end -->
+
+<div id="content">
+<div class="content_box_center_01">
+		<div id="content_box11">
+	<video src="video/main.mp4" autoplay loop muted width="99.5%" height="100%" id="bg"></video>
+   		<div id="video_text">
+      <h2>2019년 봄-여름</h2>
+      <h1>부티크</h1>
+   		</div> <!-- id=video_text end -->
+</div>  <!-- id=content_box11 end -->
+
+<div class="content_box1"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-001.html" target= "_blank">
+<span>자켓<hr>
+트위드<br>
+화이트, 베이지, 골드<br>
+₩7,880,000</span></a>
+</div>
+<div class="content_box2"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-002.html" target= "_blank">
+<span>자켓<hr>
+트위드<br>
+베이지, 골드, 에크루<br>
+₩8,230,000</span></a>
+</div>
+<div class="content_box3"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-003.html" target= "_blank">
+<span>자켓<hr>
+트위드<br>
+베이지, 에크루<br>
+₩8,540,000</span></a>
+</div>
+<div class="content_box4"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-005.html" target= "_blank">
+<span>자켓<hr>
+트위드<br>
+핑크, 블루, 화이트<br>
+₩8,610,000</span></a>
+</div>	
+<div class="content_box5"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-006.html" target= "_blank">
+<span>탑<hr>
+코튼 투알<br>
+화이트<br>
+₩2,680,000</span></a>
+</div>	
+<div class="content_box6"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-054.html" target= "_blank">
+<span>카디건<hr>
+캐시미어<br>
+화이트, 블루<br>
+₩3,030,000</span></a>
+</div>
+<div class="content_box7"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-055.html" target= "_blank">
+<span>카디건<hr>
+코튼<br>
+화이트, 레드<br>
+₩2,680,000</span></a>
+</div>
+<div class="content_box8"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-056.html" target= "_blank">
+<span>자켓<hr>
+데님 자수 장식<br>
+블루, 라이트 블루<br>
+₩13,440,000</span></a>
+</div>
+<div class="content_box9"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-053.html" target= "_blank">
+<span>스윔 수트<hr>
+스트레치 저지<br>
+블랙, 화이트<br>
+₩930,000</span></a>
+</div>
+<div class="content_box12"><a href="https://www.chanel.com/ko_KR/fashion/p/rtw/19S-podium/look-068.html" target= "_blank">
+<span>자켓<hr>
+스트레치 크레이프<br>
+블랙<br>
+₩8,200,000</span></a>
+</div>
+</div> <!-- class="content_box_center_01" end -->
+
+<div class="content_box_center_02">
+<div class="content_box10"><a href="https://www.chanel.com/ko_KR/fashion/haute-couture/spring-summer-2019/the-looks.html" target="_blank"></a>
+</div>  <!-- id=content_box10 end -->
+ </div> <!-- id=content_box_center_02 end -->
+
+</div> <!-- id=content end -->
+<div class="connect">
+<div class="call">
+<p><strong>고객 문의</strong></p>
+<p>샤넬 고객센터 연결</p>
+<ul>
+<li><a href="#">CALL ></a></li>
+<li><a href="#">이메일 ></a></li>
+</ul>
+</div> <!-- class=call end -->
+
+<div class="address">
+<p><strong>위치 찾기</strong></p>
+<p>find your closest store information :<br>services, opening hours, and contact details</p>
+<form><p><input placeholder="주소 또는 도시 입력">
+                 <input type="button" class="img-button">
+      </p>
+    </form>
+</div> <!-- class=address end -->
+
+</div> <!-- class=connect end -->
+</div> <!-- id=container end -->
+
+<div id="footer">
+<address>Copyright &copy;  Yoon_Jun_Ho All right reserveds.</address>
+</div> <!-- id=footer end -->
+</div> <!-- id=wrapper end -->
+</body>
+</html>
