@@ -249,7 +249,6 @@ h1, h2, h3, h4, h5, h6 {
 #intro .product-screens img {
   /* box-shadow: 0px -2px 19px 4px rgba(0, 0, 0, 0.29); */
 }
-
 #intro .product-screens .product-screen-1 {
   position: absolute;
   z-index: 30;
@@ -257,7 +256,6 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   top: 30px;
 }
-
 #intro .product-screens .product-screen-2 {
   position: absolute;
   z-index: 20;
@@ -265,7 +263,6 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   top: 90px;
 }
-
 #intro .product-screens .product-screen-3 {
   position: absolute;
   z-index: 10;
@@ -273,11 +270,16 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   top: 10px;
 }
-
 @media (max-width: 767px) {
   #intro .product-screens .product-screen-3 {
-    position: static;
-    padding-top: 30px;
+    position: relative;
+    left:-200px;
+    padding-top: 50px;
+    top: 0px;
+        max-width: 50%;
+  }
+  #intro .product-screens .product-screen-2 {
+    display: none;
   }
 }
 
