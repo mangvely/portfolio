@@ -39,6 +39,10 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.tiles-tile.tiles-default-normal.tiles-x6.tiles-y4.tiles-even
+  { padding: 200px 300px; }
+
+
 /* Back to top button - 위로 올리는 화살표 설정 */
 .back-to-top {
   position: fixed;
